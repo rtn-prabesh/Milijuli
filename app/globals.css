@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+:root {
+  /* Color Tokens - Premium Slate/Emerald/Indigo (Light Mode) */
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(148, 163, 184, 0.1);
+  --card-glow: rgba(5, 150, 105, 0.03);
+  
+  --primary: #059669;
+  --primary-glow: rgba(5, 150, 105, 0.15);
+  --accent: #4f46e5;
+  --accent-glow: rgba(79, 70, 229, 0.15);
+  
+  --muted: #64748b;
+  --muted-light: #cbd5e1;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Color Tokens - Dark Mode (Premium Blue-Slate App Feel) */
+    --background: #090d16;
+    --foreground: #f8fafc;
+    
+    --card-bg: rgba(15, 23, 42, 0.6);
+    --card-border: rgba(255, 255, 255, 0.05);
+    --card-glow: rgba(16, 185, 129, 0.02);
+    
+    --primary: #10b981;
+    --primary-glow: rgba(16, 185, 129, 0.2);
+    --accent: #6366f1;
+    --accent-glow: rgba(99, 102, 241, 0.2);
+    
+    --muted: #94a3b8;
+    --muted-light: #334155;
+  }
+}
+
+@theme inline {
+  /* Dynamic configuration mapped to Tailwind Theme in v4 */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  
+  --color-brand-primary: var(--primary);
+  --color-brand-primary-glow: var(--primary-glow);
+  --color-brand-accent: var(--accent);
+  --color-brand-accent-glow: var(--accent-glow);
+  
+  --color-brand-muted: var(--muted);
+  --color-brand-muted-light: var(--muted-light);
+  --color-brand-success: var(--success);
+  --color-brand-warning: var(--warning);
+  --color-brand-error: var(--error);
+  
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+/* Core native-feeling PWA setup */
+html, body {
+  overflow-x: hidden;
+  overscroll-behavior-y: contain; /* Prevents web page bouncing scroll */
+  -webkit-tap-highlight-color: transparent; /* Removes iOS touch highlight grey box */
+  -webkit-touch-callout: none; /* Prevents long-press copy dialog on iOS */
+  user-select: none; /* Make UI text non-selectable for app-like experience */
+}
+
+/* Allow selection in form inputs/tables for usability */
+input, textarea, [contenteditable="true"], .selectable {
+  user-select: text;
+}
+
+/* Hide scrollbar for clean App navigation */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Elegant glassmorphism class utility */
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+/* Pulse animation utility for processing status markers */
+@keyframes soft-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.pulse-effect {
+  animation: soft-pulse 2s infinite ease-in-out;
+}
+
+/* Slide up animation for PWA sheets/prompts */
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Fade in animation for splash screen */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

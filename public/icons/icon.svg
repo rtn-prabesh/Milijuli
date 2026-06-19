@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    
+    <!-- Emerald Brand Gradient -->
+    <linearGradient id="emerald-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    
+    <!-- Indigo Accent Gradient -->
+    <linearGradient id="indigo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+
+    <!-- Golden Coin Gradient -->
+    <linearGradient id="gold-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+    
+    <!-- Soft Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base (Rounded Rect for App Feel) -->
+  <rect width="512" height="512" rx="112" fill="url(#bg-grad)" />
+
+  <!-- Outer Glassmorphic/Gradient Ring -->
+  <rect x="24" y="24" width="464" height="464" rx="92" fill="none" stroke="url(#emerald-grad)" stroke-width="4" stroke-opacity="0.3" />
+
+  <!-- Center Artwork (Glow Effect) -->
+  <g filter="url(#glow)">
+    <!-- Decorative Glowing Background Orbs -->
+    <circle cx="160" cy="180" r="80" fill="#4f46e5" opacity="0.15" />
+    <circle cx="350" cy="320" r="90" fill="#059669" opacity="0.18" />
+
+    <!-- Unified Hands (Abstract shapes representing cooperation) -->
+    <!-- Left Supporting Hand/Leaf Shape -->
+    <path d="M 120 320 C 120 220, 220 180, 256 180 C 256 220, 220 320, 160 360 C 140 370, 120 350, 120 320 Z" fill="url(#indigo-grad)" opacity="0.85" />
+    
+    <!-- Right Supporting Hand/Leaf Shape -->
+    <path d="M 392 320 C 392 220, 292 180, 256 180 C 256 220, 292 320, 352 360 C 372 370, 392 350, 392 320 Z" fill="url(#emerald-grad)" opacity="0.85" />
+    
+    <!-- Main Connection Node (Unity base) -->
+    <path d="M 200 340 C 240 310, 272 310, 312 340 C 290 380, 222 380, 200 340 Z" fill="#ffffff" opacity="0.1" />
+
+    <!-- Golden Coin Rising (Savings & Loans Growth) -->
+    <circle cx="256" cy="220" r="54" fill="url(#gold-grad)" />
+    
+    <!-- Inner Coin details -->
+    <circle cx="256" cy="220" r="42" fill="none" stroke="#d97706" stroke-width="3" opacity="0.5" />
+    <!-- Coin Currency Symbol (NPR / Rs abstract / Growth arrow) -->
+    <path d="M 244 234 L 244 206 L 268 206 M 244 220 L 262 220 M 256 206 L 256 234 M 262 230 C 266 226, 268 220, 268 214" fill="none" stroke="#d97706" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- High-fidelity Bottom Sparkle/Star -->
+  <path d="M 256 420 L 260 400 L 280 396 L 260 392 L 256 372 L 252 392 L 232 396 L 252 400 Z" fill="#fbbf24" opacity="0.8" />
+</svg>
